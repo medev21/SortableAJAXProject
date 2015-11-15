@@ -3,4 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $('.tasks').sortable()
+  $('.tasks').sortable(
+    axis: 'y'
+    update: ->
+      $.post($(this).data('update-url'), $(this).sortable('serialize'))
+      );

@@ -1,8 +1,17 @@
-<div class="panel panel-default task_<%= task.id %>">
+<!-- <div class="panel panel-default task_<%= task.id %>">
   <div class="panel-heading">
     <h3 class="panel-title"><%= task.title %></h3>
   </div>
   <div class="panel-body">
     <%= task.description %>
   </div>
-</div>
+</div> -->
+
+<%= content_tag_for(:div, task, :class => "panel panel-defaul") do %>
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= task.title %></h3>
+  </div>
+  <div class="panel-body">
+    <%= task.description %>
+  </div>
+<% end %>
